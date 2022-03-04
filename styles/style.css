@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+button {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* fondos */
+body {
+  background-color: #eaf1f3;
+}
+header {
+  background-color: #e7e4f4;
+}
+
+/* letras */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 2s;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  text-align: center;
+}
+
+header div p {
+  font-weight: bold;
+}
+
+header nav ul li:last-child {
+  font-weight: bold;
+}
+
+/* header */
+
+#header {
+  width: 100%;
+  height: 50px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  margin: 0 auto;
+  align-items: center;
+  padding: 0px 100px;
+}
+
+body {
+  padding-top: 50px;
+}
+
+/* generales */
+
+ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+  padding: 0 10px;
+}
+
+#principal,
+#conocimientos,
+#contacto,
+footer {
+  padding: 0 100px;
+}
+
+/* flexbox */
+.container {
+  display: flex;
+  margin: 20px auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#presentacion {
+  justify-content: space-between;
+}
+
+#presentacion div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  justify-content: center;
+  width: 60%;
+}
+
+#skills .container div,
+#hobbies .container div {
+  width: 18%;
+  min-width: 150px;
+  height: 150px;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 8px 8px 0px;
+  padding: 10px;
+  display: flex;
+  transition: 0.2s;
+  background-color: #e7e4f4;
+}
+
+#skills .container div:hover,
+#hobbies .container div:hover,
+#formacion .container div:hover {
+  background-color: #abd7ff;
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+#skills .container div p,
+#hobbies .container div p {
+  margin: 18px 0 0 0;
+}
+
+.container div img {
+  height: 80px;
+}
+
+#formacion .container div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  align-items: center;
+  padding: 10px;
+  width: 280px;
+  background-color: #e7e4f4;
+  transition: 0.2s;
+}
+
+#formacion .container div p,
+#formacion .container div h4 {
+  margin: 8px 0px;
+}
+
+#perfil {
+  flex: 1;
+  order: 1;
+  flex-grow: 0;
+  width: 350px;
+  height: 350px;
+  border-radius: 180px;
+}
+
+/* contacto */
+
+#contacto {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 60px auto;
+}
+
+#divformulario {
+  width: 55%;
+}
+
+#contacto img {
+  width: 45%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mensajebtn {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  align-items: center;
+  height: 30px;
+  background-color: #2a7ae4;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  transition: 0.2s;
+}
+
+#mensajebtn:hover {
+  background-color: #1f68c7;
+  transition: 0.2s;
+}
+
+form div input {
+  height: 30px;
+  width: 94%;
+  display: flex;
+  margin: 10px 0;
+  border-radius: 3px;
+  border: 1px solid rgb(175, 175, 175);
+  transition: 0.2s;
+}
+
+form div input::placeholder {
+  padding-left: 3px;
+}
+
+form div input:focus {
+  outline: none;
+  border-radius: 3px;
+  /*border-bottom: 2px solid #2a7ae4;*/
+  background-color: #abd7ff;
+  transition: 0.2s;
+}
+
+form div textarea {
+  width: 94%;
+  margin: 0 0 20px 0;
+  resize: none;
+}
+
+form div textarea:focus {
+  outline: none;
+  border-radius: 3px;
+  border: 2px solid #2a7ae4;
+  transition: 0.1s;
+}
+
+form div:nth-child(4) {
+  align-items: flex-start;
+}
+
+form div:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+/* Responsive */
+
+@media (max-width: 1091px) {
+  #principal,
+  #conocimientos,
+  #contacto,
+  footer {
+    padding: 0 50px;
+  }
+
+  #presentacion {
+    flex-direction: column-reverse;
+  }
+  #perfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  #presentacion div {
+    width: 100%;
+  }
+}
+
+/* Iconos */
+
+.icon {
+  font-size: 35px;
+}
+
+.fa-light {
+  font-size: 25px;
+}
+
+.iconform {
+  font-size: 25px;
+}
