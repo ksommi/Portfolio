@@ -16,10 +16,13 @@ html {
 }
 
 /* fondos */
-body {
+body,
+#header {
   background-color: #eaf1f3;
 }
-header {
+#principal,
+#experiencia,
+footer {
   background-color: #e7e4f4;
 }
 
@@ -32,6 +35,7 @@ a {
 
 h1 {
   font-size: 2.5em;
+  font-weight: bold;
 }
 
 h2 {
@@ -78,9 +82,25 @@ li {
 
 #principal,
 #conocimientos,
+#experiencia,
 #contacto,
 footer {
-  padding: 0 100px;
+  padding: 10px 100px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+  margin: 2px 0 10px 0;
+}
+
+footer h4 {
+  margin: 2px 0;
 }
 
 /* flexbox */
@@ -166,7 +186,8 @@ footer {
 #contacto {
   display: flex;
   flex-flow: row wrap;
-  margin: 60px auto;
+  margin: 60px auto 10px auto;
+  padding-bottom: 10px;
 }
 
 #divformulario {
@@ -195,7 +216,8 @@ form div {
 #mensajebtn {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 40%;
+  min-width: 150px;
   align-items: center;
   height: 30px;
   background-color: #2a7ae4;
@@ -237,6 +259,8 @@ form div textarea {
   width: 94%;
   margin: 0 0 20px 0;
   resize: none;
+  border-radius: 3px;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 form div textarea:focus {
@@ -256,12 +280,34 @@ form div:last-child {
 }
 /* Responsive */
 
-@media (max-width: 1091px) {
+@media (max-width: 800px) {
   #principal,
   #conocimientos,
   #contacto,
   footer {
-    padding: 0 50px;
+    padding: 0 25px;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  #header,
+  #header nav ul li:first-child,
+  #header nav ul li:nth-child(3) {
+    display: none;
+  }
+
+  #header {
+    padding: 0px 0px;
+  }
+
+  #header nav ul li {
+    padding: 0px 5px;
+  }
+
+  .container {
+    padding: 0 0;
   }
 
   #presentacion {
@@ -273,6 +319,24 @@ form div:last-child {
   }
 
   #presentacion div {
+    width: 100%;
+  }
+
+  #skills .container div,
+  #hobbies .container div {
+    width: 45%;
+    min-width: 100px;
+  }
+
+  #divformulario {
+    width: 100%;
+  }
+
+  #contacto img {
+    display: none;
+  }
+
+  form {
     width: 100%;
   }
 }
