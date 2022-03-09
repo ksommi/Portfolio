@@ -6,44 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
-      type="text/css"
     />
     <script
       src="https://kit.fontawesome.com/a06564ff49.js"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/index.js"></script>
     <title>Portfolio - KHS</title>
   </head>
   <body>
     <header id="header" class="container">
-      <div>
+      <div id="Kevin">
         <p>Kevin Sommi</p>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#sobre">Sobre mi</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#hobbies">Hobbies</a></li>
-          <li><a href="#formacion">Formación</a></li>
-          <li><a href="#experiencia">Proyectos</a></li>
-          <li><a href="#contacto">ksommi@gmail.com</a></li>
-        </ul>
-      </nav>
+      <div id="panel-container">
+        <nav id="mySidepanel" class="sidepanel">
+          <ul>
+            <li><a href="#sobre">Sobre mi</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#experiencia">Proyectos</a></li>
+            <li><a href="#contacto">ksommi@gmail.com</a></li>
+          </ul>
+        </nav>
+        <button id="openbtn" onclick="openNav()">&#9776;</button>
+      </div>
     </header>
-    <main>
+    <main
+      id="main"
+      href="javascript:void(0)"
+      class="closebtn"
+      onclick="closeNav()"
+    >
       <div id="principal">
         <section id="presentacion" class="container">
           <img src="images/me.jpg" alt="Foto de perfil" id="perfil" />
           <div>
-            <h1>Hola, mi nombre es Kevin Sommi y construyo paginas web</h1>
+            <h1>Hola, mi nombre es Kevin y soy maquetador web</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Molestiae porro amet distinctio asperiores dolorum itaque error
-              corporis quisquam, totam fugiat, mollitia blanditiis recusandae
-              natus iure deleniti illo velit autem vitae?
+              Con una formación tanto de manera autodidacta como con cursos en
+              Educacion IT, Udemy, Linkedin Learning y actualmente participe del
+              proyecto Oracle ONE en Alura Latam.
             </p>
             <ul>
               <li>
@@ -69,7 +78,25 @@
         </section>
         <section id="sobre">
           <h2>Sobre mi</h2>
-          <p>Tengo novia</p>
+          <p>
+            Hola! Me presento de nuevo, tal vez de una manera más completa 😁.
+            Mi nombre completo es Kevin Hernan Sommi, tengo 25 años y
+            actualmente vivo en la ciudad de La Plata 🌇.
+            <br />
+            En el año 2018 realicé un curso de Maquetado Web en Educacion IT 💻.
+            Después de algun tiempo por motivos personales 😅 en Septiembre del
+            2021 tengo la oportunidad de retomar mis estudios de una manera
+            autodidacta realizando varios cursos y practicas de manera
+            totalmente independiente enfocandome en
+            <i class="fa-solid fa-code"></i> Desarrollo Front-End.
+            <br />
+            Ampliando aún mis conocimientos en
+            <i class="fa-brands fa-js-square"></i> JavaScript y
+            <i class="fa-brands fa-react"></i> React me encuentro en la busqueda
+            de la inserción en este amplio mercado laboral 💼 de la programación
+            y el desarrollo web. Sin mucho más que agregar, gracias por leerme y
+            tomarte el tiempo de revisar mi Portfolio!
+          </p>
         </section>
       </div>
       <div id="conocimientos">
@@ -202,7 +229,7 @@
             </div>
           </form>
         </div>
-        <img src="images/pelotudo.svg" alt="" />
+        <img src="images/contacto.svg" alt="" />
       </div>
       <footer>
         <div>

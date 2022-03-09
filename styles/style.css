@@ -35,7 +35,7 @@ a {
 
 h1 {
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: extra-bold;
 }
 
 h2 {
@@ -46,7 +46,7 @@ header div p {
   font-weight: bold;
 }
 
-header nav ul li:last-child {
+header div nav ul li:last-child {
   font-weight: bold;
 }
 
@@ -67,6 +67,10 @@ body {
   padding-top: 50px;
 }
 
+header div:last-child {
+  display: flex;
+}
+
 /* generales */
 
 ul {
@@ -74,6 +78,7 @@ ul {
   align-items: center;
   list-style-type: none;
   padding-left: 0px;
+  flex-flow: row wrap;
 }
 
 li {
@@ -278,6 +283,48 @@ form div:last-child {
   display: flex;
   justify-content: flex-end;
 }
+
+/* Iconos */
+
+.icon {
+  font-size: 35px;
+}
+
+.fa-light {
+  font-size: 25px;
+}
+
+.iconform {
+  font-size: 25px;
+}
+
+/* Sidepanel */
+.sidepanel {
+  overflow: hidden;
+  transition: 0.5s;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.sidepanel .closebtn {
+  font-size: 36px;
+  display: none;
+}
+
+#openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  display: none;
+}
+
+#openbtn:hover {
+  background-color: #444;
+}
+
 /* Responsive */
 
 @media (max-width: 800px) {
@@ -285,25 +332,42 @@ form div:last-child {
   #conocimientos,
   #contacto,
   footer {
-    padding: 0 25px;
+    padding: 10px 25px;
   }
 
   body {
     padding-top: 0;
   }
 
-  #header,
-  #header nav ul li:first-child,
-  #header nav ul li:nth-child(3) {
-    display: none;
+  #main {
+    transition: margin-top 0.5s;
+    padding-top: 30px;
   }
 
   #header {
-    padding: 0px 0px;
+    padding: 0px 0px 0px 10px;
+    width: 100%;
   }
 
-  #header nav ul li {
-    padding: 0px 5px;
+  #header div nav ul li {
+    padding: 4px 5px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    margin: 4px auto;
+  }
+
+  #openbtn {
+    display: block;
+    height: 50px;
+  }
+
+  .sidepanel {
+    display: none;
+    width: 100%;
+    height: 170px;
   }
 
   .container {
@@ -339,18 +403,4 @@ form div:last-child {
   form {
     width: 100%;
   }
-}
-
-/* Iconos */
-
-.icon {
-  font-size: 35px;
-}
-
-.fa-light {
-  font-size: 25px;
-}
-
-.iconform {
-  font-size: 25px;
 }
