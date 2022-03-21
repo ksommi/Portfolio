@@ -1,15 +1,27 @@
-function openNav() {
-  document.getElementById("mySidepanel").style.display = "block";
-  document.getElementById("main").style.marginTop = "170px";
-  document.getElementById("Kevin").style.display = "none";
-  document.getElementById("panel-container").style.width = "100%";
-  document.getElementById("openbtn").style.display = "none";
-}
+/* Elementos */
+var menuButton = document.querySelector("#menubtn");
+var navBar = document.querySelector("#mySidepanel");
+var main = document.querySelector("#main");
+var myName = document.querySelector("#Kevin");
+var navContainer = document.querySelector("#panel-container");
+var header = document.querySelector("#header");
 
-function closeNav() {
-  document.getElementById("mySidepanel").style.display = "none";
-  document.getElementById("main").style.marginTop = "0";
-  document.getElementById("Kevin").style.display = "block";
-  document.getElementById("panel-container").style.width = "";
-  document.getElementById("openbtn").style.display = "block";
+/* Eventos */
+
+menuButton.addEventListener("click", menuNav);
+
+function menuNav() {
+  if (navBar.style.display === "block") {
+    navBar.style.display = "none";
+    main.style.marginTop = "0";
+    myName.style.display = "block";
+    navContainer.style.width = "";
+    header.style.height = "";
+  } else {
+    navBar.style.display = "block";
+    main.style.marginTop = "110px";
+    myName.style.display = "none";
+    navContainer.style.width = "100%";
+    header.style.height = "165px";
+  }
 }

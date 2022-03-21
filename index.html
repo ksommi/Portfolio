@@ -16,7 +16,6 @@
       src="https://kit.fontawesome.com/a06564ff49.js"
       crossorigin="anonymous"
     ></script>
-    <script src="scripts/index.js"></script>
     <title>Portfolio - KHS</title>
   </head>
   <body>
@@ -35,20 +34,15 @@
             <li><a href="#contacto">ksommi@gmail.com</a></li>
           </ul>
         </nav>
-        <button id="openbtn" onclick="openNav()">&#9776;</button>
+        <button id="menubtn">&#9776;</button>
       </div>
     </header>
-    <main
-      id="main"
-      href="javascript:void(0)"
-      class="closebtn"
-      onclick="closeNav()"
-    >
+    <main id="main">
       <div id="principal">
         <section id="presentacion" class="container">
           <img src="images/me.jpg" alt="Foto de perfil" id="perfil" />
           <div>
-            <h1>Hola, mi nombre es Kevin y soy maquetador web</h1>
+            <h1>Hola, mi nombre es Kevin y construyo páginas Web</h1>
             <p>
               Con una formación tanto de manera autodidacta como con cursos en
               Educacion IT, Udemy, Linkedin Learning y actualmente participe del
@@ -116,6 +110,10 @@
               <p>CSS3</p>
             </div>
             <div>
+              <i class="fa-brands fa-github icon"></i>
+              <p>Github</p>
+            </div>
+            <div>
               <i class="fa-brands fa-react icon"></i>
               <p>React</p>
             </div>
@@ -131,6 +129,10 @@
             <div>
               <i class="fa-solid fa-guitar icon"></i>
               <p>Tocar la guitarra</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-gamepad icon"></i>
+              <p>Jugar videojuegos</p>
             </div>
             <div>
               <i class="fa-solid fa-record-vinyl icon"></i>
@@ -159,6 +161,11 @@
               <p>2018 - Educacion IT</p>
             </div>
             <div>
+              <img src="images/Udemy_logo.svg" alt="Udemy" />
+              <h4>JavaScript</h4>
+              <p>2022 - Udemy</p>
+            </div>
+            <div>
               <img src="images/alura.png" alt="Formación Oracle ONE" />
               <h4>Formación UX Design</h4>
               <p>2022 - Alura</p>
@@ -170,21 +177,21 @@
         <h2>Experiencia Profesional</h2>
         <div id="items">
           <div>
-            <img src="" alt="" />
-            <h3>Proyecto 1 Ejemplo</h3>
-            <p></p>
+            <img src="images/Encriptador.png" alt="" />
+            <h3>Encriptador de texto</h3>
+            <p>Challenge de JavaScript nº 1</p>
             <div>
-              <button>Repositorio</button>
-              <button>Ver demo</button>
+              <button><a href=""> Repositorio</a></button>
+              <button><a>Ver demo</a></button>
             </div>
           </div>
           <div>
-            <img src="" alt="" />
-            <h3>Proyecto 2 Ejemplo</h3>
-            <p></p>
+            <img src="images/Ahorcado.png" alt="" />
+            <h3>Ahorcado</h3>
+            <p>Challenge de JavaScript nº 2</p>
             <div>
-              <button>Repositorio</button>
-              <button>Ver demo</button>
+              <button><a>Repositorio</a></button>
+              <button><a>Ver demo</a></button>
             </div>
           </div>
           <div>
@@ -239,4 +246,5 @@
       </footer>
     </main>
   </body>
+  <script src="scripts/index.js"></script>
 </html>
