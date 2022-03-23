@@ -81,6 +81,7 @@ ul {
   list-style-type: none;
   padding-left: 0px;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 li {
@@ -187,15 +188,15 @@ footer h4 {
   flex: 1;
   order: 1;
   flex-grow: 0;
-  width: 350px;
-  height: 350px;
+  width: 329px;
+  height: 329px;
   border-radius: 10px;
 }
 
 /* Proyectos */
 #items {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -285,8 +286,6 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: flex-end;
-  padding-right: 20px;
 }
 
 form div {
@@ -294,6 +293,22 @@ form div {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+form .fa-circle-check,
+form .fa-circle-exclamation {
+  position: absolute;
+  left: 52%;
+  padding: 5px;
+  display: none;
+}
+
+.fa-circle-check {
+  color: green;
+}
+
+.fa-circle-exclamation {
+  color: red;
 }
 
 #mensajebtn {
@@ -408,18 +423,55 @@ form div:last-child {
 /* Responsive */
 
 @media (max-width: 1024px) {
+  #header #principal,
+  #conocimientos,
+  #experiencia,
+  #contacto,
+  footer {
+    padding: 10px 25px;
+  }
+
+  #menubtn {
+    display: block;
+    height: 50px;
+  }
+
+  .sidepanel {
+    display: none;
+    width: 100%;
+    height: 170px;
+  }
+
   #skills .container div,
   #hobbies .container div {
     width: 30%;
+  }
+  #perfil {
+    margin: 0 auto;
+  }
+  #presentacion {
+    flex-direction: column-reverse;
+  }
+  #presentacion div {
+    width: 100%;
+  }
+  form .fa-circle-check,
+  form .fa-circle-exclamation {
+    left: 52%;
   }
 }
 
 @media (max-width: 768px) {
   #principal,
   #conocimientos,
+  #experiencia,
   #contacto,
   footer {
-    padding: 10px 25px;
+    padding: 10px 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
   }
 
   body {
@@ -434,6 +486,7 @@ form div:last-child {
   #header {
     padding: 0px 0px 0px 10px;
     width: 100%;
+    justify-content: space-between;
   }
 
   #header div nav ul li {
@@ -446,49 +499,39 @@ form div:last-child {
     margin: 4px auto;
   }
 
-  #menubtn {
-    display: block;
-    height: 50px;
-  }
-
-  .sidepanel {
-    display: none;
-    width: 100%;
-    height: 170px;
-  }
-
-  .container {
-    padding: 0 0;
-  }
-
-  #presentacion {
-    flex-direction: column-reverse;
-  }
-  #perfil {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-  }
-
-  #presentacion div {
-    width: 100%;
-  }
-
   #skills .container div,
   #hobbies .container div {
     width: 45%;
     min-width: 100px;
   }
 
+  .container {
+    padding: 0 0;
+  }
+
+  #perfil {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
   #divformulario {
     width: 100%;
+  }
+  form {
+    padding: 0;
+  }
+  form div input,
+  form div textarea {
+    width: 90%;
   }
 
   #contacto img {
     display: none;
   }
-
-  form {
-    width: 100%;
+  form .fa-circle-check,
+  form .fa-circle-exclamation {
+    left: auto;
+    right: 20px;
   }
 }
