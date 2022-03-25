@@ -13,15 +13,20 @@ var inputEmail = document.querySelector("#emailForm");
 var inputSubject = document.querySelector("#subjectForm");
 var inputMessage = document.querySelector("#messageForm");
 var formButton = document.querySelector("#mensajebtn");
+var circleCheck = document.querySelectorAll(".fa-circle-check");
+var circleExclamation = document.querySelectorAll(".fa-circle-exclamation");
 
 /* Eventos */
 
 menuButton.addEventListener("click", menuNav);
+inputName.addEventListener("blur", validateName);
+inputEmail.addEventListener("blur", validateEmail);
+inputSubject.addEventListener("blur", validateSubject);
+inputMessage.addEventListener("blur", validateMessage);
 formButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   saveAll();
-  validateName(inputName.value);
   console.log(entireForm);
 });
 
@@ -51,11 +56,71 @@ function saveAll() {
   return entireForm;
 }
 
+function wrong(id, number) {
+  circleExclamation[number].style.display = "block";
+  circleCheck[number].style.display = "none";
+  id.classList.add("invalid");
+}
+
+function check(id, number) {
+  circleExclamation[number].style.display = "none";
+  circleCheck[number].style.display = "block";
+  id.classList.remove("invalid");
+}
+
 function validateName() {
-  var name = entireForm.name;
+  var name = inputName.value;
   name = name.trim();
-  if (/([^a-z ])/.test(name) || name === "" || name.length > 20) {
+  if (/([^a-zA-Z ])/.test(name) || name === "" || name.length > 20) {
+    wrong(inputName, 0);
     return false;
   }
+  check(inputName, 0);
+  console.log("true");
+  updateButtonStatus();
   return true;
 }
+
+function validateEmail() {
+  var email = inputEmail.value;
+  if (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(email)) {
+    check(inputEmail, 1);
+    return true;
+  }
+  wrong(inputEmail, 1);
+  updateButtonStatus();
+  return false;
+}
+
+function validateSubject() {
+  var subject = inputSubject.value;
+  if (subject === "" || subject.length > 50) {
+    wrong(inputSubject, 2);
+    return false;
+  }
+  check(inputSubject, 2);
+  updateButtonStatus();
+  return true;
+}
+
+function validateMessage() {
+  var message = inputMessage.value;
+  if (message === "" || message.length > 300) {
+    wrong(inputMessage, 3);
+    return false;
+  } else {
+    check(inputMessage, 3);
+    updateButtonStatus();
+    return true;
+  }
+}
+
+function updateButtonStatus() {
+  if (validateName && validateEmail && validateSubject && validateMessage) {
+    formButton.disabled = false;
+  } else {
+    formButton.disabled = true;
+  }
+}
+
+// si tiro "validateName === true" en consola me arroja false aunque el nombre este verificado correctamente

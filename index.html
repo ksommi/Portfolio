@@ -218,7 +218,7 @@
             </p>
           </div>
           <form action="">
-            <div>
+            <div id="nameDiv">
               <i class="fa-solid fa-user iconform"></i>
               <input
                 id="nameForm"
@@ -228,19 +228,24 @@
               <i class="fa-regular fa-circle-check"></i>
               <i class="fa-solid fa-circle-exclamation"></i>
             </div>
-            <div>
+            <div id="emailDiv">
               <i class="fa-solid fa-envelope iconform"></i>
-              <input id="emailForm" type="email" placeholder="E-mail" />
+              <input
+                id="emailForm"
+                type="email"
+                placeholder="E-mail"
+                required
+              />
               <i class="fa-regular fa-circle-check"></i>
               <i class="fa-solid fa-circle-exclamation"></i>
             </div>
-            <div>
+            <div id="subjectDiv">
               <i class="fa-solid fa-comment-dots iconform"></i>
               <input id="subjectForm" type="text" placeholder="Asunto" />
               <i class="fa-regular fa-circle-check"></i>
               <i class="fa-solid fa-circle-exclamation"></i>
             </div>
-            <div>
+            <div id="messageDiv">
               <i class="fa-solid fa-quote-left iconform"></i>
               <textarea
                 id="messageForm"
@@ -253,7 +258,9 @@
               <i class="fa-solid fa-circle-exclamation"></i>
             </div>
             <div>
-              <button id="mensajebtn" type="submit">Enviar mensaje</button>
+              <button id="mensajebtn" type="submit" disabled>
+                Enviar mensaje
+              </button>
             </div>
           </form>
         </div>

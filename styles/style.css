@@ -303,12 +303,20 @@ form .fa-circle-exclamation {
   display: none;
 }
 
+form .invalid {
+  border: 1px solid rgb(184, 0, 0);
+}
+
+form .invalid:focus {
+  background-color: #ffabab;
+}
+
 .fa-circle-check {
   color: green;
 }
 
 .fa-circle-exclamation {
-  color: red;
+  color: rgb(184, 0, 0);
 }
 
 #mensajebtn {
@@ -324,6 +332,10 @@ form .fa-circle-exclamation {
   border-radius: 3px;
   border: none;
   transition: 0.2s;
+}
+
+#mensajebtn:disabled {
+  background-color: grey;
 }
 
 #mensajebtn:hover {
