@@ -20,9 +20,13 @@ var circleExclamation = document.querySelectorAll(".fa-circle-exclamation");
 
 menuButton.addEventListener("click", menuNav);
 inputName.addEventListener("blur", validateName);
+inputName.addEventListener("keypress", updateButtonStatus);
 inputEmail.addEventListener("blur", validateEmail);
+inputEmail.addEventListener("keypress", updateButtonStatus);
 inputSubject.addEventListener("blur", validateSubject);
+inputSubject.addEventListener("keypress", updateButtonStatus);
 inputMessage.addEventListener("blur", validateMessage);
+inputMessage.addEventListener("keypress", updateButtonStatus);
 formButton.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -74,22 +78,24 @@ function validateName() {
   if (/([^a-zA-Z ])/.test(name) || name === "" || name.length > 20) {
     wrong(inputName, 0);
     return false;
+  } else {
+    check(inputName, 0);
+    console.log("true");
+    return true;
   }
-  check(inputName, 0);
-  console.log("true");
-  updateButtonStatus();
-  return true;
 }
 
 function validateEmail() {
   var email = inputEmail.value;
   if (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(email)) {
     check(inputEmail, 1);
+    console.log("true email");
     return true;
+  } else {
+    wrong(inputEmail, 1);
+    updateButtonStatus();
+    return false;
   }
-  wrong(inputEmail, 1);
-  updateButtonStatus();
-  return false;
 }
 
 function validateSubject() {
@@ -97,10 +103,11 @@ function validateSubject() {
   if (subject === "" || subject.length > 50) {
     wrong(inputSubject, 2);
     return false;
+  } else {
+    check(inputSubject, 2);
+    updateButtonStatus();
+    return true;
   }
-  check(inputSubject, 2);
-  updateButtonStatus();
-  return true;
 }
 
 function validateMessage() {
@@ -116,7 +123,7 @@ function validateMessage() {
 }
 
 function updateButtonStatus() {
-  if (validateName && validateEmail && validateSubject && validateMessage) {
+  if (validateName === true && validateEmail === true) {
     formButton.disabled = false;
   } else {
     formButton.disabled = true;
