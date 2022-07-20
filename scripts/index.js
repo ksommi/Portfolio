@@ -34,6 +34,7 @@ formButton.addEventListener("click", (e) => {
 
   saveAll();
   console.log(entireForm);
+  alert("Formulario de prueba para chequear inputs y capturar datos.");
 });
 
 function menuNav() {
